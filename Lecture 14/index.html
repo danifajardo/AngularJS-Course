@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="MsgApp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>Expressions and Interpolation</title>
+</head>
+<body>
+    <h1>Expressions and Interpolation</h1>
+    <div ng-controller="MsgController">
+        {{name}} has a message for you: <br>
+        Original: {{sayMessage()}} <br> 
+        Love Message: {{sayLovesMessage()}} <br>
+        Truth Mesage: {{sayTruthMessage()}} <br>
+        Truth and Uppercase Message: {{sayLovesMessage() | truth: "Daniel" : "Luis" | uppercase}}
+        <div>
+            <button ng-click="feedDaniel()">Feed Daniel</button>
+            <br>
+            <img ng-src="Images/daniel_{{stateOfBeing}}.jpg">
+        </div>
+    </div>
+</body>
+</html>
