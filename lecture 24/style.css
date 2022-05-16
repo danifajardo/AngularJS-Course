@@ -1,0 +1,11 @@
+body{
+    font-size: 1.2em;
+}
+
+div{
+    display: inline-block;
+}
+
+.error{
+    color: red;
+}

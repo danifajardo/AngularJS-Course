@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="ShoppingListApp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>Custom service</title>
+</head>
+<body>
+    <h3>Custom service</h3>
+
+    <!-- pre-configured list -->
+    <div id="list" ng-controller="ShoppingListController as list">
+        <h3>Shopping List</h3>
+        <input type="text" ng-model="list.itemName" placeholder="item name">
+        <input type="text" ng-model="list.itemQuantity" placeholder="item quantity">
+        <button ng-click="list.addItem();">Add item</button>
+        <ol>
+            <li ng-repeat="item in list.items">
+                {{item.quantity}} of {{item.name}}
+                <button ng-click="list.removeItem($index);">Remove item</button>
+            </li>
+        </ol>
+        <!-- <div class="error" ng-if="list.errorMessage">Error: {{list.errorMessage}}</div> -->
+        <div class="error" ng-if="list.validation">ng-if working (active div)</div>
+        <div class="error" ng-show="list.validation">ng-show working (active div)</div>
+        <div class="error" ng-hide="list.validation">ng-hide working (active div)</div>
+    </div>
+</body>
+</html>
